@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-cnhkwnof-gitops
+  description: This is GitOps manifest for go-cnhkwnof   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-cnhkwnof
+    backstage.io/kubernetes-id: go-cnhkwnof 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-cnhkwnof
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-cnhkwnof
